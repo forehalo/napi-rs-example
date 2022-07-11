@@ -1,0 +1,38 @@
+{
+  "name": "napi-rs-example",
+  "version": "1.0.0",
+  "main": "index.node",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "index",
+    "targets": [
+      "aarch64-apple-darwin",
+      "aarch64-linux-android",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "aarch64-pc-windows-msvc",
+      "x86_64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "x86_64-unknown-freebsd",
+      "i686-pc-windows-msvc",
+      "armv7-unknown-linux-gnueabihf",
+      "armv7-linux-androideabi"
+    ],
+    "package": {
+      "name": "@napi-rs/example"
+    }
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10.16.0 && < 11 || >= 11.8.0"
+  },
+  "scripts": {
+    "build": "napi build --release --strip",
+    "build:debug": "napi build",
+    "artifacts": "napi artifacts",
+    "preversion": "napi version",
+    "test": "node ./test"
+  }
+}

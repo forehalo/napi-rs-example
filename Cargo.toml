@@ -1,0 +1,19 @@
+[package]
+name = "test-new"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2", default-features = false, features = ["napi4"] }
+napi-derive = { version = "2", default-features = false, features = ["type-def"] }
+
+[build-dependencies]
+napi-build = "2"
+
+[profile.release]
+lto = true
